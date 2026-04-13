@@ -1,0 +1,38 @@
+[
+  {
+    "id": 0,
+    "story_name": "the-wee-bannock",
+    "story_section": "there was once an old man and his wife , who lived in a dear little cottage by the side of a burn . they were a very canty and contented couple , for they had enough to live on , and enough to do . indeed , they considered themselves quite rich , for , besides their cottage and their garden , they possessed two sleek cows , five hens and a cock , an old cat , and two kittens . the old man spent his time looking after the cows , and the hens , and the garden ; while the old woman kept herself busy spinning . one day , just after breakfast , the old woman thought that she would like an oatmeal bannock for her supper that evening , so she took down her bakeboard , and put on her girdle , and baked a couple of fine cakes , and when they were ready she put them down before the fire to harden .",
+    "question": "where did the old man and his wife live ?",
+    "answer": "in a dear little cottage by the side of a burn .",
+    "answer2": "in a dear little cottage by the side of a burn .",
+    "local_or_sum": "local",
+    "attribute": "setting",
+    "ex_or_im": "explicit",
+    "ex_or_im2": "explicit"
+  },
+  {
+    "id": 1,
+    "story_name": "the-wee-bannock",
+    "story_section": "there was once an old man and his wife , who lived in a dear little cottage by the side of a burn . they were a very canty and contented couple , for they had enough to live on , and enough to do . indeed , they considered themselves quite rich , for , besides their cottage and their garden , they possessed two sleek cows , five hens and a cock , an old cat , and two kittens . the old man spent his time looking after the cows , and the hens , and the garden ; while the old woman kept herself busy spinning . one day , just after breakfast , the old woman thought that she would like an oatmeal bannock for her supper that evening , so she took down her bakeboard , and put on her girdle , and baked a couple of fine cakes , and when they were ready she put them down before the fire to harden .",
+    "question": "who were a very canty and contented couple ?",
+    "answer": "an old man and his wife .",
+    "answer2": "an old man and his wife .",
+    "local_or_sum": "local",
+    "attribute": "character",
+    "ex_or_im": "explicit",
+    "ex_or_im2": "explicit"
+  },
+  {
+    "id": 2,
+    "story_name": "the-wee-bannock",
+    "story_section": "there was once an old man and his wife , who lived in a dear little cottage by the side of a burn . they were a very canty and contented couple , for they had enough to live on , and enough to do . indeed , they considered themselves quite rich , for , besides their cottage and their garden , they possessed two sleek cows , five hens and a cock , an old cat , and two kittens . the old man spent his time looking after the cows , and the hens , and the garden ; while the old woman kept herself busy spinning . one day , just after breakfast , the old woman thought that she would like an oatmeal bannock for her supper that evening , so she took down her bakeboard , and put on her girdle , and baked a couple of fine cakes , and when they were ready she put them down before the fire to harden .",
+    "question": "what animals did the couple own ?",
+    "answer": "two sleek cows , five hens and a cock , an old cat , and two kittens .",
+    "answer2": "two sleek cows , five hens and a cock , and old cat and two kittens .",
+    "local_or_sum": "local",
+    "attribute": "action",
+    "ex_or_im": "explicit",
+    "ex_or_im2": "explicit"
+  }
+]
