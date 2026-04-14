@@ -1,0 +1,122 @@
+[
+  {
+    "id": 0,
+    "story_name": "the-wee-bannock",
+    "story_section": "there was once an old man and his wife , who lived in a dear little cottage by the side of a burn . they were a very canty and contented couple , for they had enough to live on , and enough to do . indeed , they considered themselves quite rich , for , besides their cottage and their garden , they possessed two sleek cows , five hens and a cock , an old cat , and two kittens . the old man spent his time looking after the cows , and the hens , and the garden ; while the old woman kept herself busy spinning . one day , just after breakfast , the old woman thought that she would like an oatmeal bannock for her supper that evening , so she took down her bakeboard , and put on her girdle , and baked a couple of fine cakes , and when they were ready she put them down before the fire to harden .",
+    "question": "where did the old man and his wife live ?",
+    "answer": "in a dear little cottage by the side of a burn .",
+    "answer2": "in a dear little cottage by the side of a burn .",
+    "local_or_sum": "local",
+    "attribute": "setting",
+    "ex_or_im": "explicit",
+    "ex_or_im2": "explicit"
+  },
+  {
+    "id": 1,
+    "story_name": "the-wee-bannock",
+    "story_section": "there was once an old man and his wife , who lived in a dear little cottage by the side of a burn . they were a very canty and contented couple , for they had enough to live on , and enough to do . indeed , they considered themselves quite rich , for , besides their cottage and their garden , they possessed two sleek cows , five hens and a cock , an old cat , and two kittens . the old man spent his time looking after the cows , and the hens , and the garden ; while the old woman kept herself busy spinning . one day , just after breakfast , the old woman thought that she would like an oatmeal bannock for her supper that evening , so she took down her bakeboard , and put on her girdle , and baked a couple of fine cakes , and when they were ready she put them down before the fire to harden .",
+    "question": "who were a very canty and contented couple ?",
+    "answer": "an old man and his wife .",
+    "answer2": "an old man and his wife .",
+    "local_or_sum": "local",
+    "attribute": "character",
+    "ex_or_im": "explicit",
+    "ex_or_im2": "explicit"
+  },
+  {
+    "id": 2,
+    "story_name": "the-wee-bannock",
+    "story_section": "there was once an old man and his wife , who lived in a dear little cottage by the side of a burn . they were a very canty and contented couple , for they had enough to live on , and enough to do . indeed , they considered themselves quite rich , for , besides their cottage and their garden , they possessed two sleek cows , five hens and a cock , an old cat , and two kittens . the old man spent his time looking after the cows , and the hens , and the garden ; while the old woman kept herself busy spinning . one day , just after breakfast , the old woman thought that she would like an oatmeal bannock for her supper that evening , so she took down her bakeboard , and put on her girdle , and baked a couple of fine cakes , and when they were ready she put them down before the fire to harden .",
+    "question": "what animals did the couple own ?",
+    "answer": "two sleek cows , five hens and a cock , an old cat , and two kittens .",
+    "answer2": "two sleek cows , five hens and a cock , and old cat and two kittens .",
+    "local_or_sum": "local",
+    "attribute": "action",
+    "ex_or_im": "explicit",
+    "ex_or_im2": "explicit"
+  },
+  {
+    "id": 3,
+    "story_name": "the-wee-bannock",
+    "story_section": "there was once an old man and his wife , who lived in a dear little cottage by the side of a burn . they were a very canty and contented couple , for they had enough to live on , and enough to do . indeed , they considered themselves quite rich , for , besides their cottage and their garden , they possessed two sleek cows , five hens and a cock , an old cat , and two kittens . the old man spent his time looking after the cows , and the hens , and the garden ; while the old woman kept herself busy spinning . one day , just after breakfast , the old woman thought that she would like an oatmeal bannock for her supper that evening , so she took down her bakeboard , and put on her girdle , and baked a couple of fine cakes , and when they were ready she put them down before the fire to harden .",
+    "question": "what did the old man spend his time doing ?",
+    "answer": "looking after the cows , and the hens , and the garden .",
+    "answer2": "looking after the cows , and the hens , and the garden .",
+    "local_or_sum": "local",
+    "attribute": "action",
+    "ex_or_im": "explicit",
+    "ex_or_im2": "explicit"
+  },
+  {
+    "id": 4,
+    "story_name": "the-wee-bannock",
+    "story_section": "there was once an old man and his wife , who lived in a dear little cottage by the side of a burn . they were a very canty and contented couple , for they had enough to live on , and enough to do . indeed , they considered themselves quite rich , for , besides their cottage and their garden , they possessed two sleek cows , five hens and a cock , an old cat , and two kittens . the old man spent his time looking after the cows , and the hens , and the garden ; while the old woman kept herself busy spinning . one day , just after breakfast , the old woman thought that she would like an oatmeal bannock for her supper that evening , so she took down her bakeboard , and put on her girdle , and baked a couple of fine cakes , and when they were ready she put them down before the fire to harden .",
+    "question": "what did the old woman want for supper ?",
+    "answer": "an oatmeal bannock .",
+    "answer2": "an oatmeal bannock .",
+    "local_or_sum": "local",
+    "attribute": "action",
+    "ex_or_im": "explicit",
+    "ex_or_im2": "explicit"
+  },
+  {
+    "id": 5,
+    "story_name": "the-wee-bannock",
+    "story_section": "there was once an old man and his wife , who lived in a dear little cottage by the side of a burn . they were a very canty and contented couple , for they had enough to live on , and enough to do . indeed , they considered themselves quite rich , for , besides their cottage and their garden , they possessed two sleek cows , five hens and a cock , an old cat , and two kittens . the old man spent his time looking after the cows , and the hens , and the garden ; while the old woman kept herself busy spinning . one day , just after breakfast , the old woman thought that she would like an oatmeal bannock for her supper that evening , so she took down her bakeboard , and put on her girdle , and baked a couple of fine cakes , and when they were ready she put them down before the fire to harden .",
+    "question": "what did the old woman do to make an oatmeal bannock ?",
+    "answer": "took down her bakeboard , and put on her girdle , and baked a couple of fine cakes , and when they were ready she put them down before the fire to harden .",
+    "answer2": "she took down her bakeboard , and put on her girdle , and baked a couple of fine cakes .",
+    "local_or_sum": "local",
+    "attribute": "action",
+    "ex_or_im": "explicit",
+    "ex_or_im2": "explicit"
+  },
+  {
+    "id": 6,
+    "story_name": "the-wee-bannock",
+    "story_section": "while they were toasting , her husband came in from the byre , and sat down to take a rest in his great arm - chair . presently his eyes fell on the bannocks , and , as they looked very good , he broke one through the middle and began to eat it . when the other bannock saw this it determined that it should not have the same fate , so it ran across the kitchen and out of the door as fast as it could . and when the old woman saw it disappearing , she ran after it as fast as her legs would carry her , holding her spindle in one hand and her distaff in the other . but she was old , and the bannock was young , and it ran faster than she did , and escaped over the hill behind the house . it ran , and it ran , and it ran , until it came to a large newly thatched cottage , and , as the door was open , it took refuge inside , and ran right across the floor to a blazing fire , which was burning in the first room that it came to .",
+    "question": "what happened after the other bannock saw the old man eat one of the bannocks ?",
+    "answer": "the other bannock tried to escape .",
+    "answer2": "it ran across the kitchen and out of the door as fast as it could .",
+    "local_or_sum": "local",
+    "attribute": "outcome resolution",
+    "ex_or_im": "implicit",
+    "ex_or_im2": "explicit"
+  },
+  {
+    "id": 7,
+    "story_name": "the-wee-bannock",
+    "story_section": "while they were toasting , her husband came in from the byre , and sat down to take a rest in his great arm - chair . presently his eyes fell on the bannocks , and , as they looked very good , he broke one through the middle and began to eat it . when the other bannock saw this it determined that it should not have the same fate , so it ran across the kitchen and out of the door as fast as it could . and when the old woman saw it disappearing , she ran after it as fast as her legs would carry her , holding her spindle in one hand and her distaff in the other . but she was old , and the bannock was young , and it ran faster than she did , and escaped over the hill behind the house . it ran , and it ran , and it ran , until it came to a large newly thatched cottage , and , as the door was open , it took refuge inside , and ran right across the floor to a blazing fire , which was burning in the first room that it came to .",
+    "question": "how did the other bannock feel after it saw one of the banoocks get eaten ?",
+    "answer": "scared .",
+    "answer2": "determined to run away .",
+    "local_or_sum": "local",
+    "attribute": "feeling",
+    "ex_or_im": "implicit",
+    "ex_or_im2": "implicit"
+  },
+  {
+    "id": 8,
+    "story_name": "the-wee-bannock",
+    "story_section": "while they were toasting , her husband came in from the byre , and sat down to take a rest in his great arm - chair . presently his eyes fell on the bannocks , and , as they looked very good , he broke one through the middle and began to eat it . when the other bannock saw this it determined that it should not have the same fate , so it ran across the kitchen and out of the door as fast as it could . and when the old woman saw it disappearing , she ran after it as fast as her legs would carry her , holding her spindle in one hand and her distaff in the other . but she was old , and the bannock was young , and it ran faster than she did , and escaped over the hill behind the house . it ran , and it ran , and it ran , until it came to a large newly thatched cottage , and , as the door was open , it took refuge inside , and ran right across the floor to a blazing fire , which was burning in the first room that it came to .",
+    "question": "what happened after the old woman chased after the bannock ?",
+    "answer": "the bannock ran into another house .",
+    "answer2": "the bannock escaped over hill behind the house and ran into a cottage .",
+    "local_or_sum": "local",
+    "attribute": "outcome resolution",
+    "ex_or_im": "implicit",
+    "ex_or_im2": "implicit"
+  },
+  {
+    "id": 9,
+    "story_name": "the-wee-bannock",
+    "story_section": "while they were toasting , her husband came in from the byre , and sat down to take a rest in his great arm - chair . presently his eyes fell on the bannocks , and , as they looked very good , he broke one through the middle and began to eat it . when the other bannock saw this it determined that it should not have the same fate , so it ran across the kitchen and out of the door as fast as it could . and when the old woman saw it disappearing , she ran after it as fast as her legs would carry her , holding her spindle in one hand and her distaff in the other . but she was old , and the bannock was young , and it ran faster than she did , and escaped over the hill behind the house . it ran , and it ran , and it ran , until it came to a large newly thatched cottage , and , as the door was open , it took refuge inside , and ran right across the floor to a blazing fire , which was burning in the first room that it came to .",
+    "question": "what did the woman do after she saw the bannock disappearing ?",
+    "answer": "ran after it as fast as her legs would carry her , holding her spindle in one hand and her distaff in the other .",
+    "answer2": "ran after it .",
+    "local_or_sum": "local",
+    "attribute": "action",
+    "ex_or_im": "explicit",
+    "ex_or_im2": "explicit"
+  }
+]
