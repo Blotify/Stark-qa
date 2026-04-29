@@ -1,0 +1,101 @@
+question_id,question,ground_truth,prediction,answer_source,question_type,local_or_sum,ex_or_im,prediction_time
+0,where did the old man and his wife live ?,in a dear little cottage by the side of a burn .,in a dear little cottage by the side of a burn.,mistral,setting,local,explicit,0.7468969821929932
+1,who were a very canty and contented couple ?,an old man and his wife .,the old man and his wife.,mistral,character,local,explicit,1.6352181434631348
+2,what animals did the couple own ?,"two sleek cows , five hens and a cock , an old cat , and two kittens .","two sleek cows , five hens and a cock , an old cat , and two kittens.",mistral,action,local,explicit,1.7375860214233398
+3,what did the old man spend his time doing ?,"looking after the cows , and the hens , and the garden .","looking after the cows , and the hens , and the garden.",mistral,action,local,explicit,1.616649866104126
+4,what did the old woman want for supper ?,an oatmeal bannock .,an oatmeal bannock.,mistral,action,local,explicit,1.619140863418579
+5,what did the old woman do to make an oatmeal bannock ?,"took down her bakeboard , and put on her girdle , and baked a couple of fine cakes , and when they were ready she put them down before the fire to harden .","she took down her bakeboard , and put on her girdle , and baked a couple of fine cakes.",mistral,action,local,explicit,1.7327899932861328
+6,what happened after the other bannock saw the old man eat one of the bannocks ?,the other bannock tried to escape .,it ran across the kitchen and out of the door as fast as it could.,mistral,outcome resolution,local,implicit,1.6874098777770996
+7,how did the other bannock feel after it saw one of the banoocks get eaten ?,scared .,scared.,mistral,feeling,local,implicit,1.5756480693817139
+8,what happened after the old woman chased after the bannock ?,the bannock ran into another house .,"she ran after it as fast as her legs would carry her , holding her spindle in one hand and her distaff in the other.",mistral,outcome resolution,local,implicit,1.819244146347046
+9,what did the woman do after she saw the bannock disappearing ?,"ran after it as fast as her legs would carry her , holding her spindle in one hand and her distaff in the other .","she ran after it as fast as her legs would carry her , holding her spindle in one hand and her distaff in the other.",mistral,action,local,explicit,1.687932014465332
+10,why couldn't the old woman catch up to the bannock ?,"she was old , and the bannock was young , and it ran faster than she did , and escaped over the hill behind the house .",it ran faster than she did.,mistral,causal relationship,local,explicit,1.635641098022461
+11,where did the bannock escape to ?,a large newly thatched cottage .,over the hill behind the house.,mistral,setting,local,explicit,1.6270010471343994
+12,what were the tailors and his apprentices doing before the bannock came in ?,"sat cross - legged on the top of a big table by the window , sew away with all their might .","sitting cross-legged on the top of a big table by the window , sewing away with all their might.",mistral,action,local,explicit,1.844223976135254
+13,how did the three tailors feel after they saw the bannock ?,frightened .,frightened.,mistral,feeling,local,implicit,1.6904430389404297
+14,what will the tailors do when they see the bannock ?,jump down from the table and hide behind the master tailor 's wife .,try to catch it.,mistral,prediction,summary,explicit,1.607262134552002
+15,what will the tailor's wife and the three tailors do to the bannock ?,try to catch the bannock .,try to catch it.,mistral,prediction,summary,implicit,1.6691200733184814
+16,what did the tailor's wife and the three tailors want to do with the bannock after they caught it ?,eat the bannock .,divide it between you.,mistral,action,local,implicit,1.639604091644287
+17,how did the bannock escape from the tailor's wife and the three tailors ?,"dodged them round and round the fire , and at last it got safely out of the door and ran down the road .",it ran.,mistral,action,local,explicit,1.5458779335021973
+18,what did the three tailors use to catch the bannock ?,"great shears , line measure , and the saucer full of pins .","his great shears , the line measure , and the saucer full of pins.",mistral,action,local,explicit,1.7318830490112305
+19,where did the bannock escape to after running away from the tailors ?,a tiny cottage by the roadside .,in a large newly thatched cottage.,mistral,setting,local,explicit,1.7342891693115234
+20,how will the weaver feel after seeing the bannock ?,delighted .,delighted.,mistral,prediction,summary,explicit,1.7433929443359375
+21,what did the weaver's husband want her to do ?,grab the bannock .,grip the wee bannock.,mistral,action,local,implicit,1.625020980834961
+22,what did the goodwife throw at the bannock ?,her clue .,her clue.,mistral,action,local,explicit,1.6690890789031982
+23,what did the goodwife do in the kitchen ?,filled her kirn .,kirning.,mistral,action,local,explicit,1.561357021331787
+24,what did the goodwife want to eat with her cream ?,cakes .,cakes and cream.,mistral,action,local,explicit,1.5948729515075684
+25,why wasn't the goodwife able to catch the bannock ?,she had to fix the kirn .,it was too quick.,mistral,causal relationship,local,implicit,1.6382629871368408
+26,why did the bannock run away from the miller ?,the little bannock had no wish to be eaten up by the miller .,it had no wish to be eaten up by the miller.,mistral,causal relationship,local,explicit,2.5344078540802
+27,why didn't the miller run after the bannock ?,the miller was so busy .,he was so busy.,mistral,causal relationship,local,explicit,1.6640760898590088
+28,what did the smith do as the bannock entered ?,made horse - shoe nails .,he looked up.,mistral,action,local,explicit,1.6047070026397705
+29,how did  the smith feel after the bannock ran away ?,disappointed .,disappointed.,mistral,feeling,local,explicit,1.6722829341888428
+30,what did the smith do after the bannock ran away ?,flung his heavy hammer at it .,picked up his hammer and ran after it.,mistral,action,local,explicit,1.640902042388916
+31,what happened after the smith flung his heavy hammer at the bannock ?,he missed his aim .,"luckily for the little cake , he missed his aim.",mistral,outcome resolution,local,explicit,1.6799957752227783
+32,where did the bannock escape to after running away from the smith ?,a farmhouse .,in a large newly thatched cottage.,mistral,setting,local,explicit,1.6462578773498535
+33,why did the janet's husband want to eat the bannock ?,it looked rare and good .,it looks rare and good to eat.,mistral,causal relationship,local,explicit,2.819185256958008
+34,how did the janet's husband feel when it saw the bannock ?,surprised .,surprised.,mistral,feeling,local,explicit,1.6368961334228516
+35,what did janet and her husband want to do with the bannock ?,split the bannock in half .,divide it between you.,mistral,action,local,implicit,1.6791529655456543
+36,what did the janet throw at the bannock after it dodged behind a chair ?,her heckle .,her heckle.,mistral,action,local,explicit,1.567199945449829
+37,where did the bannock escape to after running away from the farmhouse ?,a little cottage standing among the heather .,over the hill behind the house.,mistral,setting,local,explicit,1.6698591709136963
+38,what will jock do when his wife sees the bannock ?,try to find the bannock .,come here.,mistral,prediction,summary,implicit,1.6356501579284668
+39,why did the jock fall ?,"jock ran into the dark corner behind the chair ; but , in his hurry , he tripped and fell .",in his hurry.,mistral,causal relationship,local,explicit,1.5899128913879395
+40,where did the bannock escape to after running away from jock and his wife ?,a shepherd 's cottage on the other side .,"through the whins and up the hillside it ran , and over the top of the hill , to a shepherd 's cottage on the other side.",mistral,setting,local,explicit,1.791651725769043
+41,why did the bannock always run to the fire in the houses ?,it wanted to warm itself .,to warm itself.,mistral,causal relationship,summary,implicit,1.6555287837982178
+42,why did the shepherd and his wife want to catch the bannock ?,they wanted to eat the bannock with their porridge .,it would come in handy after the porridge.,mistral,causal relationship,local,implicit,1.6183738708496094
+43,what did the shepherd throw at the bannock ?,his bonnet .,his bonnet.,mistral,action,local,explicit,1.5788040161132812
+44,why did the goodman want to catch the bannock ?,he did not have enough to eat at supper .,it would come in handy after the porridge.,mistral,causal relationship,local,implicit,1.699781894683838
+45,why did the goodman go home ?,he was feeling cold without his coat .,he was feeling cold without his coat.,mistral,causal relationship,local,explicit,1.6407458782196045
+46,why didn't the goodman have his coat when he was chasing the bannock ?,he threw it on the bannock .,"he ran out after it , without his coat.",mistral,causal relationship,local,implicit,1.8606526851654053
+47,where did the bannock fall into ?,a fox 's hole .,the fox's hole.,mistral,setting,local,explicit,1.6874089241027832
+48,why did the bannock fall into the fox's hole ?,it was so dark that it never saw that there was a fox 's hole there .,it was so dark that it never saw that there was a fox's hole there.,mistral,causal relationship,local,explicit,1.6458981037139893
+49,what happened after the bannock fell into the fox's hole ?,the fox ate the bannock .,"the fox was very glad to see it , for he had had no food for two days.",mistral,outcome resolution,local,implicit,1.6748359203338623
+50,what kind of hair did the wife have ?,golden hair .,golden hair.,mistral,character,local,explicit,1.6257667541503906
+51,why couldn't one find anyone like the king's wife ?,she was so beautiful .,she was so beautiful.,mistral,causal relationship,local,explicit,1.6451551914215088
+52,what happened when the king's wife fell ill ?,she felt that she must soon die .,"she sent for the king , and said , ' if you want to marry after my death , make no one queen unless she is just as beautiful as i am , and has just such golden hair as i have .",mistral,outcome resolution,local,explicit,4.394002199172974
+53,who did the king's wife send for when she felt that she would soon die ?,the king .,the king.,mistral,character,local,explicit,1.5966107845306396
+54,why did the councillors say the king had to marry again ?,so that they may have a queen .,so that we may have a queen.,mistral,causal relationship,local,explicit,1.6368451118469238
+55,why were the messengers sent far and wide ?,to seek for a bride equal to the late queen in beauty .,to seek for a bride equal to the late queen in beauty.,mistral,causal relationship,local,explicit,1.6871302127838135
+56,how did the king's daughter look ?,just as beautiful as her dead mother .,"just as beautiful as her dead mother , and had just such golden hair.",mistral,character,local,explicit,2.042612075805664
+57,why did the king want his daughter to be the queen ?,she was exactly like her dead mother .,for she is exactly like her dead mother.,mistral,causal relationship,local,explicit,1.6307377815246582
+58,what will happen when the king dies ?,his daughter 's husband shall be king .,"the king must marry again , so that we may have a queen.",mistral,outcome resolution,local,explicit,1.6502630710601807
+59,how did the king's daughter feel when she heard his decision ?,not at all pleased .,not at all pleased.,mistral,feeling,local,explicit,2.0501010417938232
+60,what did the king's daughter say she must have ?,three dresses .,"three dresses ; one as golden as the sun , one as silver as the moon , and one as shining as the stars.",mistral,action,summary,explicit,1.7026238441467285
+61,what did the cloak have to made of ?,every animal .,a thousand different kinds of skin.,mistral,action,local,explicit,1.5961930751800537
+62,what did the king command the huntsmen to do ?,catch one of every kind of beast in the kingdom .,"to catch one of every kind of beast in the kingdom , and to get a bit of its skin to make the cloak of a thousand pieces of fur.",mistral,action,local,explicit,1.8200812339782715
+63,who did the king command to weave the three dresses ?,the most skilled maidens .,the most skilled maidens in his kingdom.,mistral,character,local,explicit,1.9461302757263184
+64,what happened after all was ready ?,"the king commanded the cloak to be brought to him , and he spread it out before the princess .","the king commanded the cloak to be brought to him , and he spread it out before the princess , and said , ' tomorrow shall be your wedding - day.",mistral,outcome resolution,local,explicit,1.7406730651855469
+65,what was the princess determined to do ?,flee away .,flee away.,mistral,action,local,explicit,1.643960952758789
+66,what did the princess do while everyone was sleeping ?,she got up and took three things from her treasures .,"got up and took three things from her treasures , a gold ring , a little gold spinning - wheel , and a gold reel ; she put the sun , moon , and star dresses in a nut - shell , drew on the cloak of many skins , and made her face and hands black with soot.",mistral,action,local,explicit,2.3497860431671143
+67,what did the princess put in a nut-shell ?,"the sun , moon , and star dresses .","the sun , moon , and star dresses.",mistral,action,local,explicit,1.6377298831939697
+68,who did the princess commend herself to ?,god .,god.,mistral,character,local,explicit,1.5949559211730957
+69,where did the princess travel till ?,a large forest .,to a large forest.,mistral,setting,local,explicit,1.614621877670288
+70,where did the princess fall asleep ?,inside a hollow tree .,inside a hollow tree.,mistral,setting,local,explicit,1.6014800071716309
+71,what did the princess do after she condemned herself to god ?,went out and travelled the whole night .,went out and travelled the whole night till she came to a large forest.,mistral,action,local,explicit,1.6288588047027588
+72,who did the wood belong to ?,the king .,the king.,mistral,character,local,explicit,1.648521900177002
+73,what did the king do in the wood ?,hunt .,was hunting in it.,mistral,action,local,explicit,1.6397161483764648
+74,what did the dogs do when they came to the tree ?,sniffed .,"they sniffed , and ran round and round it , barking.",mistral,action,local,explicit,1.7419452667236328
+75,what did the huntsmen say lived in the tree ?,a wonderful animal that they did n't know .,"in the hollow tree there lies a wonderful animal that we don't know, and we have never seen one like it; its skin is made of a thousand pieces of fur.",mistral,action,local,explicit,1.7267489433288574
+76,what did the king tell the huntsmen to do to the beast ?,catch it alive .,see what sort of a wild beast is in there.,mistral,action,local,explicit,1.6490709781646729
+77,what happened after the huntsmen seized the maiden ?,she awoke .,"she awoke and was frightened , and cried out to them.",mistral,outcome resolution,local,explicit,1.7408628463745117
+78,how did the princess feel when she awoke ?,frightened .,frightened.,mistral,feeling,local,explicit,1.591465950012207
+79,what did the huntsmen say the creature could do ?,work in the kitchen .,sweep the ashes together.,mistral,action,local,explicit,1.637671947479248
+80,where did the creature and the huntsmen go ?,back to the palace .,back to the palace.,mistral,setting,local,explicit,1.6867468357086182
+81,where would the many-furred creature sleep ?,a tiny room under the stairs .,in a tiny room under the stairs.,mistral,setting,local,explicit,1.8433310985565186
+82,what did the many-furred creature do in the kitchen ?,"carried wood and water , poked the fire , washed vegetables , plucked fowls , swept up the ashes , and did all the dirty work .","carried wood and water , poked the fire , washed vegetables , plucked fowls , swept up the ashes.",mistral,action,local,explicit,1.682873249053955
+83,what will the princess do in half-an-hour ?,be back here to sweep up the ashes .,cook the king the bread-soup that he likes so much.,mistral,prediction,local,explicit,1.6611738204956055
+84,what did the princess do in her little room ?,"drew off her fur cloak , and washed off the soot from her face and hands .","drew off her fur cloak , and washed off the soot from her face and hands.",mistral,action,local,explicit,1.7738289833068848
+85,why did everybody step out of the princess' way ?,"nobody knew her , and they thought she must be a king 's daughter .",nobody knew her.,mistral,causal relationship,local,explicit,1.6419031620025635
+86,what did the king do after he came towards the princess ?,"gave her his hand , and danced with her .",gave her his hand and danced with her.,mistral,action,local,explicit,1.7392899990081787
+87,what will happen if the many-furred creature drops a hair in the soup ?,the many - furred creature will get nothing to eat in future .,you will get nothing to eat in future.,mistral,prediction,local,explicit,1.7411198616027832
+88,what did the many-furred creature do after she made a bread-soup ?,"fetched her gold ring from her little room , and laid it in the tureen in which the soup was to be served up .","she fetched her gold ring from her little room , and laid it in the tureen in which the soup was to be served up.",mistral,action,local,explicit,1.7057971954345703
+89,what did the king discover at the bottom of the dish ?,a gold ring .,a gold ring.,mistral,action,local,explicit,1.5753579139709473
+90,how did the cook feel when the king called him in ?,terrified .,terrified.,mistral,feeling,local,explicit,1.6186628341674805
+91,why did the king say the cook did not prepare his soup ?,it was quite different and much better soup than the cook have ever cooked .,it was quite different and much better soup than you have ever cooked.,mistral,causal relationship,local,explicit,1.7519757747650146
+92,who did the cook say cooked the soup ?,the many - furred creature .,the many-furred creature.,mistral,character,local,explicit,1.6425390243530273
+93,who did the many-furred creature go upstairs looking like ?,a king 's daughter .,the many-furred creature.,mistral,character,local,explicit,1.737874984741211
+94,what will the king do with the beautiful maiden when he sees her again ?,dance .,he will marry his daughter to one of his councillors.,mistral,prediction,summary,explicit,1.7435519695281982
+95,how did the king feel seeing the maiden again ?,delighted .,delighted.,mistral,feeling,local,explicit,1.6513440608978271
+96,what happened when the dance ended ?,the maiden disappeared again so quickly that the king could not see which way she went .,she disappeared again so quickly that the king could not see which way she went.,mistral,outcome resolution,local,explicit,1.724005937576294
+97,what did the many-furred creature say her use was ?,have boots thrown at her head .,i am of no use except to have boots thrown at my head.,mistral,action,summary,explicit,1.6400251388549805
+98,what did the cook think the many-furred creature was ?,a witch .,a witch.,mistral,action,local,explicit,1.7401561737060547
+99,why did the cook think the many-furred creature was a witch ?,"she always put something in the soup , so that it is much better and tastes nicer to the king than any that he cooked .","you always put something in the soup , so that it is much better and tastes nicer to the king than any that i cook.",mistral,causal relationship,local,explicit,1.7437350749969482
