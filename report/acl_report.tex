@@ -1,0 +1,254 @@
+\documentclass[11pt]{article}
+
+% Camera-ready ACL style (use [review] for the anonymised submission version).
+\usepackage{acl}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{enumitem}
+
+\title{STARK-QA: A Reproducible Hybrid RAG--KAG System for\\Narrative Question Answering on FairytaleQA}
+
+\author{Ishaan Romil (2023114011) \quad Archit Choudhary (2023114002) \quad
+  Sujal Deoda (2022115001) \\
+  International Institute of Information Technology, Hyderabad}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present \textbf{STARK-QA} (\emph{Story-grounded Text Answering with Retrieval
+and Knowledge}), a question-answering system for the FairytaleQA narrative
+comprehension benchmark that fuses dense\,+\,sparse passage retrieval (RAG) with
+a lightweight knowledge graph (KAG) and generates grounded answers with a
+large language model. Beyond the system itself, this report documents a
+\emph{reproducibility and repair} effort: we took a non-running research
+prototype, restored it to a fully working state, hardened every external
+dependency with a graceful fallback, and pinned a locked, one-command
+environment. On 100 held-out FairytaleQA test questions, STARK-QA attains a
+token-level F1 of \textbf{0.611}, \textbf{3.5$\times$} the Basic-RAG ablation
+(0.176) and \textbf{14.9$\times$} the Basic-KAG ablation (0.041), while leading
+on Exact Match, ROUGE-1/2/L, BLEU, semantic similarity and BERTScore. We release
+the full pipeline, cached data splits, and a deterministic \texttt{uv} lockfile.
+\end{abstract}
+
+\section{Introduction}
+Narrative question answering requires a system to read a story and answer
+free-form questions about its characters, settings, actions, and the causal and
+emotional relationships between them. FairytaleQA \citep{xu-etal-2022-fairytaleqa}
+is an authentic benchmark of such questions written by education experts over
+classic fairy tales, spanning seven attribute types (\emph{character},
+\emph{setting}, \emph{action}, \emph{feeling}, \emph{causal relationship},
+\emph{outcome resolution}, and \emph{prediction}) and an explicit/implicit
+reasoning split.
+
+Two paradigms dominate knowledge-intensive QA. Retrieval-augmented generation
+(RAG) \citep{lewis2020rag} retrieves relevant passages and conditions a generator
+on them; it excels at descriptive \emph{where}/\emph{why} questions whose answer
+is a span of text. Knowledge-augmented generation (KAG) instead extracts
+structured entities and relations \citep{pan2024kgsurvey} and is naturally suited
+to entity-centric \emph{who} questions. STARK-QA \textbf{fuses both}: it orders
+RAG and KAG evidence by the question type and lets an LLM compose a short,
+grounded answer, so it inherits the strengths of each rather than committing to
+one.
+
+This report makes three contributions:
+\begin{enumerate}[noitemsep]
+    \item A hybrid RAG\,+\,KAG architecture with question-type-aware evidence
+    fusion and grounded LLM generation (\S\ref{sec:system}).
+    \item A reproducibility/repair effort that turns a broken prototype into a
+    one-command, dependency-locked, gracefully degrading pipeline
+    (\S\ref{sec:repro}).
+    \item A full evaluation against RAG-only and KAG-only ablations across eight
+    metrics and seven question types (\S\ref{sec:results}).
+\end{enumerate}
+
+\section{System Architecture}
+\label{sec:system}
+Given a question $q$ and the story corpus reconstructed from the test split,
+STARK-QA produces an answer in four stages.
+
+\paragraph{Hybrid retrieval (RAG).} Stories are chunked into overlapping
+word windows (200 words, overlap 40). We embed chunks with a
+Sentence-BERT encoder \citep{reimers-gurevych-2019-sentencebert}
+(\texttt{all-MiniLM-L6-v2}) and index them with FAISS
+\citep{johnson2021faiss} for dense semantic search, run in parallel with a
+TF--IDF lexical index. The two score vectors are min--max normalised and fused as
+$s = \alpha\, s_{\text{dense}} + (1-\alpha)\, s_{\text{tfidf}}$ with
+$\alpha = 0.6$, followed by a light question-type re-ranking pass.
+
+\paragraph{Knowledge graph (KAG).} From each story we extract entities
+(characters, objects/places, descriptive concepts), simple co-occurrence
+relationships, and the sentences in which each entity appears, all with
+dependency-free regular expressions. At query time the question is matched to
+entities (exact $\rightarrow$ partial $\rightarrow$ semantic) and the most
+relevant stored sentences plus matching relationships are returned.
+
+\paragraph{Question-type-aware fusion.} RAG and KAG evidence are ordered by the
+kind of question---entity-first for \emph{who}, passage-first for
+\emph{where}/\emph{why}---before generation, so the prompt foregrounds the most
+useful evidence for that type.
+
+\paragraph{Grounded generation.} A few-shot, FairytaleQA-styled prompt conditions
+the Mistral LLM (\texttt{mistral-small-latest}, temperature $0$) on the fused
+evidence to produce the shortest complete answer span. When no API key is
+present, the system falls back to a dependency-free extractive answerer over the
+same fused evidence, so it always returns a grounded answer.
+
+\paragraph{Ablation baselines.} \textbf{Basic-RAG} uses TF--IDF retrieval with
+purely extractive answering (no dense embeddings, no KAG). \textbf{Basic-KAG}
+builds an entity co-occurrence graph and answers from graph neighbourhoods. Both
+are deliberately weaker, isolating the contribution of hybrid retrieval and of
+the fusion-plus-LLM design.
+
+\section{Reproducibility and Engineering}
+\label{sec:repro}
+A substantial part of this work was restoring a non-running prototype to a
+correct, reproducible state. The salient changes were:
+\begin{itemize}[noitemsep]
+    \item \textbf{Shared utilities.} Sentence splitting, tokenisation, answer
+    normalisation and corpus fingerprinting were centralised, removing
+    behavioural drift between components that previously defined these
+    differently.
+    \item \textbf{Graceful degradation.} Every heavy dependency
+    (\texttt{torch}/\texttt{sentence-transformers}/FAISS, spaCy, NLTK, ROUGE,
+    BERTScore, Matplotlib) has a pure-Python or TF--IDF fallback, so a missing
+    package degrades quality rather than crashing the run.
+    \item \textbf{LLM client compatibility.} Generation now probes the modern,
+    namespaced and legacy Mistral SDK import layouts and uses a current model id,
+    fixing breakage against newer SDK releases; calls are throttled and retried
+    with exponential backoff to respect rate limits.
+    \item \textbf{Offline data and caching.} The data loader imports
+    \texttt{datasets} lazily and reuses cached JSON splits offline; retrieval
+    indices are cached and keyed by a fingerprint of the corpus so changing the
+    data transparently rebuilds the index.
+    \item \textbf{Locked environment.} Dependencies are declared in
+    \texttt{pyproject.toml} and pinned in a \texttt{uv.lock} (107 packages), so
+    \texttt{uv sync} reproduces the exact stack on Python~3.11.
+\end{itemize}
+
+\section{Experimental Setup}
+\label{sec:setup}
+\paragraph{Data.} We evaluate on the first 100 questions of the FairytaleQA test
+split, shipped as a cached JSON split for fully offline reproduction. The primary
+human reference answer is used as ground truth.
+
+\paragraph{Metrics.} We report Exact Match and token-level F1 (SQuAD-style
+normalisation), ROUGE-1/2/L \citep{lin-2004-rouge}, BLEU
+\citep{papineni-2002-bleu}, embedding-based semantic similarity, and BERTScore
+F1 \citep{zhang2020bertscore}, together with mean response time. BERTScore uses
+\texttt{distilbert-base-uncased} to avoid a large model download; the canonical
+\texttt{roberta-large} scorer is configurable.
+
+\paragraph{Configuration.} Retrieval top-$k=5$, hybrid weight $\alpha=0.6$, chunk
+size 200 words. Generation uses temperature $0$ and an 80-token cap. All settings
+live in \texttt{config.py} and are overridable via environment variables.
+
+\section{Results}
+\label{sec:results}
+Table~\ref{tab:main} reports the headline comparison. STARK-QA leads on
+\emph{every} metric. Its token-F1 of 0.611 is $3.5\times$ Basic-RAG and
+$14.9\times$ Basic-KAG, and the gap widens on the generation-oriented metrics
+(BLEU $0.422$ vs.\ $0.085$; ROUGE-2 $0.467$ vs.\ $0.128$), reflecting the value
+of grounded LLM composition over purely extractive answering. The cost is
+latency: STARK-QA averages $1.73$\,s per question (an API round-trip plus
+proactive throttling) against sub-millisecond local baselines.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Metric} & \textbf{STARK-QA} & \textbf{Basic-RAG} & \textbf{Basic-KAG} \\
+\midrule
+Exact Match    & \textbf{0.35}  & 0.00 & 0.01 \\
+Token F1       & \textbf{0.611} & 0.176 & 0.041 \\
+ROUGE-1        & \textbf{0.629} & 0.196 & 0.058 \\
+ROUGE-2        & \textbf{0.467} & 0.128 & 0.010 \\
+ROUGE-L        & \textbf{0.627} & 0.186 & 0.055 \\
+BLEU           & \textbf{0.422} & 0.085 & 0.008 \\
+Semantic sim.  & \textbf{0.729} & 0.381 & 0.193 \\
+BERTScore F1   & \textbf{0.893} & 0.729 & 0.657 \\
+\midrule
+Avg.\ time (s) & 1.726 & 0.001 & 0.003 \\
+\bottomrule
+\end{tabular}
+\caption{Main results on 100 FairytaleQA test questions. Baselines are
+deterministic; STARK-QA figures are from the reported Mistral run.}
+\label{tab:main}
+\end{table}
+
+\paragraph{Per-type analysis.} Table~\ref{tab:bytype} breaks F1 down by question
+attribute. STARK-QA is strongest on \emph{feeling} (1.00) and \emph{character}
+(0.82) questions, where the fused entity and emotion evidence is highly
+predictive, and weakest on \emph{prediction} (0.36) and \emph{outcome
+resolution} (0.35), which require inference beyond the literal text. The ordering
+is consistent across systems---every type that is hard for the baselines is also
+the relative weak point for STARK-QA---but STARK-QA dominates within each type,
+e.g.\ \emph{feeling} improves from $0.03$/$0.00$ (RAG/KAG) to $1.00$.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Question type} (n) & \textbf{STARK} & \textbf{B-RAG} & \textbf{B-KAG} \\
+\midrule
+feeling (8)              & \textbf{1.00} & 0.03 & 0.00 \\
+character (9)            & \textbf{0.82} & 0.10 & 0.11 \\
+causal relationship (19) & \textbf{0.64} & 0.26 & 0.08 \\
+action (37)             & \textbf{0.58} & 0.20 & 0.01 \\
+setting (11)            & \textbf{0.58} & 0.10 & 0.03 \\
+prediction (7)          & \textbf{0.36} & 0.13 & 0.01 \\
+outcome resolution (9)  & \textbf{0.35} & 0.24 & 0.09 \\
+\bottomrule
+\end{tabular}
+\caption{Token-F1 by FairytaleQA question type. STARK-QA dominates within every
+type; the relative ordering of difficulty is shared across systems.}
+\label{tab:bytype}
+\end{table}
+
+\paragraph{Discussion.} The ablations confirm the design hypothesis. Basic-RAG
+(lexical-only, extractive) recovers some content on descriptive
+\emph{causal}/\emph{action} questions but cannot phrase a clean short answer,
+capping its F1 near $0.18$ and its Exact Match at $0$. Basic-KAG is weaker still:
+co-occurrence neighbourhoods rarely contain the precise answer span. STARK-QA's
+combination of dense+sparse retrieval, structured KAG context, and LLM
+composition lifts both the \emph{retrieval} of relevant evidence and the
+\emph{surface form} of the answer, which is why the gain is largest on the
+generation-sensitive metrics (BLEU, ROUGE-2) and on Exact Match.
+
+\section{Conclusion}
+STARK-QA shows that fusing hybrid retrieval with a lightweight knowledge graph
+and grounding an LLM on the result yields large, consistent gains over either
+component alone on narrative QA. Equally important for a course/research artifact,
+the system is now \emph{reproducible}: a single \texttt{uv sync} reconstructs the
+locked environment, cached splits enable offline runs, and graceful fallbacks
+keep the pipeline running even when optional dependencies are absent.
+
+\section*{Limitations}
+The evaluation covers 100 test questions from a single split; broader coverage
+and multiple reference answers would tighten the estimates. STARK-QA's
+generation depends on a proprietary LLM, so its scores are not perfectly
+reproducible run-to-run (the deterministic extractive fallback trades some
+quality for full reproducibility). Entity and relation extraction in the KAG
+module is regex-based and English/fairy-tale-specific, and BERTScore uses a
+lighter encoder than the canonical \texttt{roberta-large}, which may shift
+absolute BERTScore values.
+
+\section*{Reproducibility}
+Code, cached FairytaleQA splits, configuration and the \texttt{uv.lock} are
+included in the repository. To reproduce:
+\texttt{uv sync -{}-python 3.11}; \texttt{uv run python -m spacy download
+en\_core\_web\_sm}; \texttt{uv run python main.py -{}-test\_size 100}. Outputs are
+written to \texttt{results/}.
+
+\bibliography{custom}
+
+\end{document}
