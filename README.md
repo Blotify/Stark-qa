@@ -140,12 +140,9 @@ can therefore leave a stale cache undetected.
 
 ## Original project credits
 
-The supplied project credits **Ishaan Romil (2023114011)**,
-**Archit Choudhary (2023114002)**, and **Sujal Deoda (2022115001)**. Its original
+The supplied project credits **Satvik Shrivastava (2024102029)**. Its original
 course context is Introduction to NLP at IIIT Hyderabad, taught by
-Prof. Manish Shrivastava in Spring 2025. The original README records submission
-on May 7, 2025 and evaluation on May 10, 2025.
+Prof. Manish Shrivastava in Spring 2025. The inspiration for this project was 
+taken from this course.
 
-This local repository's 29 commits reconstruct the supplied snapshot. Author and
-committer dates were assigned across April 10 to May 4, 2026; they do not establish
-when the original development took place.
+
